@@ -1,0 +1,25 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    prefer-ip-address: true #使用ip注册到eureka服务列表
+#spring:
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: SPRING-CLOUD-CONFIG-SERVER
+#      name: application-plat
+#      profile: dev
+server:
+  port: 5000
+spring:
+  application:
+    name: product-service
+  datasource:
+    dirver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 160607
+    url: jdbc:mysql:///aigou-product
+

@@ -1,0 +1,26 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    prefer-ip-address:  true  #使用ip注册
+#spring:
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: SPRING-CLOUD-CONFIG-SERVER
+#      name: application-zuul
+#      profile: dev
+server:
+      port: 2000
+spring:
+  application:
+    name: zuul-server
+zuul:
+  ignoredServices: '*'
+  routes:
+    plat:
+      path: /plat/**
+      serviceId: plat-service
+  prefix: /services

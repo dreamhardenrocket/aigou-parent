@@ -1,0 +1,15 @@
+cn\itsource\product\mapper\BrandMapper.class
+cn\itsource\product\service\IProductTypeService.class
+cn\itsource\product\controller\ProductTypeController.class
+cn\itsource\product\service\impl\ProductServiceImpl.class
+cn\itsource\product\config\Swagger2.class
+cn\itsource\product\service\impl\BrandServiceImpl.class
+cn\itsource\product\controller\BrandController.class
+cn\itsource\product\controller\ProductController.class
+cn\itsource\product\mapper\ProductMapper.class
+cn\itsource\product\mapper\ProductTypeMapper.class
+cn\itsource\product\service\IBrandService.class
+cn\itsource\product\ProductApplication.class
+cn\itsource\product\service\impl\ProductTypeServiceImpl.class
+cn\itsource\product\config\MybatisPlusConfig.class
+cn\itsource\product\service\IProductService.class

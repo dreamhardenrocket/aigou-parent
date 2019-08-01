@@ -1,0 +1,6 @@
+cn\itsource\product\query\ProductQuery.class
+cn\itsource\product\domain\ProductType.class
+cn\itsource\product\query\ProductTypeQuery.class
+cn\itsource\product\domain\Product.class
+cn\itsource\product\query\BrandQuery.class
+cn\itsource\product\domain\Brand.class
