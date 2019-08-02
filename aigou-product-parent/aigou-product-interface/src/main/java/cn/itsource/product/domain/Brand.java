@@ -52,6 +52,7 @@ public class Brand extends Model<Brand> {
     /**
      * 商品分类ID
      */
+    @TableField("product_type_id")
     private Long productTypeId;
 
     //表示这个属性不会对应数据库中的列

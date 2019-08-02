@@ -19,7 +19,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.itsource.plat.controller"))
+                .apis(RequestHandlerSelectors.basePackage("cn.itsource.product.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -27,9 +27,9 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("平台服务api")
+                .title("商品服务api")
                 .description("平台服务接口文档说明")
-                .contact(new Contact("solargen", "", " lishugen@itsource.cn"))
+                .contact(new Contact("Amy", "", " dreamhardenrocket@gmail.com"))
                 .version("1.0")
                 .build();
     }

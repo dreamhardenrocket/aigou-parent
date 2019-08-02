@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //Spring boot方式
 @EnableTransactionManagement
 @Configuration
-@MapperScan("cn.itsource.aigou.mapper")
+@MapperScan("cn.itsource.product.mapper")
 public class MybatisPlusConfig {
 
     /**

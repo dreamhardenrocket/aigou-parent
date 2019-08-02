@@ -23,4 +23,7 @@ zuul:
     plat:
       path: /plat/**
       serviceId: plat-service
+    product:
+      path: /product/**
+      serviceId: product-service
   prefix: /services

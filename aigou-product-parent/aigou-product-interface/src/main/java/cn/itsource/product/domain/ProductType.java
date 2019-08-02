@@ -78,8 +78,6 @@ public class ProductType extends Model<ProductType> {
     @TableField("seoKeywords")
     private String seoKeywords;
 
-    private Long typeTemplateId;
-
     @TableField(exist = false)
     private List<ProductType> children = new ArrayList<>();//子类型
 
@@ -180,13 +178,7 @@ public class ProductType extends Model<ProductType> {
         this.seoKeywords = seoKeywords;
     }
 
-    public Long getTypeTemplateId() {
-        return typeTemplateId;
-    }
 
-    public void setTypeTemplateId(Long typeTemplateId) {
-        this.typeTemplateId = typeTemplateId;
-    }
 
     @Override
     protected Serializable pkVal() {
@@ -208,7 +200,6 @@ public class ProductType extends Model<ProductType> {
         ", totalCount=" + totalCount +
         ", seoTitle=" + seoTitle +
         ", seoKeywords=" + seoKeywords +
-        ", typeTemplateId=" + typeTemplateId +
         "}";
     }
 

@@ -15,9 +15,7 @@ public class DocumentationConfig implements SwaggerResourcesProvider {
         List resources = new ArrayList<>();
         resources.add(swaggerResource("商品系统", "/services/product/v2/api-docs", "2.0"));
         resources.add(swaggerResource("用户系统", "/services/user/v2/api-docs", "2.0"));
-        resources.add(swaggerResource("基础系统", "/services/common/v2/api-docs", "2.0"));
         resources.add(swaggerResource("平台管理", "/services/plat/v2/api-docs", "2.0"));
-        resources.add(swaggerResource("平台x管理", "/services/plat/login", "2.0"));
         return resources;
     }
 
