@@ -26,4 +26,7 @@ zuul:
     product:
       path: /product/**
       serviceId: product-service
+    common:
+      path: /common/**
+      serviceId: common-server
   prefix: /services

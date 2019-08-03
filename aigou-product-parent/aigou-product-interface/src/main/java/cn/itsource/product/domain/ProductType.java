@@ -79,7 +79,7 @@ public class ProductType extends Model<ProductType> {
     private String seoKeywords;
 
     @TableField(exist = false)
-    private List<ProductType> children = new ArrayList<>();//子类型
+    private List<ProductType> children ;//子类型
 
 
     public Long getId() {

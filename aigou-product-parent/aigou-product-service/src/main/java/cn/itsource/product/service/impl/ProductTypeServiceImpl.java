@@ -50,7 +50,7 @@ public class ProductTypeServiceImpl extends ServiceImpl<ProductTypeMapper, Produ
         //第二步 ： 生成home.html
         map = new HashMap<>();
         templatePath = "C:\\Users\\艾米\\Desktop\\aigou-parent\\aigou-product-parent\\aigou-product-service\\src\\main\\resources\\template\\home.vm";
-        targetPath = "C:\\Users\\艾米\\Desktop\\aigou-web\\vue-admin-master\\home.html";
+        targetPath = "C:\\Users\\艾米\\Desktop\\aigou-web\\vue-home-master\\home.html";
         //model 中要有一个数据是staticRoot
         Map<String,String> model = new HashMap<>();
         model.put("staticRoot","C:\\Users\\艾米\\Desktop\\aigou-parent\\aigou-product-parent\\aigou-product-service\\src\\main\\resources\\");
@@ -97,7 +97,12 @@ public class ProductTypeServiceImpl extends ServiceImpl<ProductTypeMapper, Produ
                 list.add(productType);
             }else{
                 ProductType parent = map.get(productType.getPid());
-                parent.getChildren().add(productType);
+                List<ProductType> children = parent.getChildren();
+                if(children==null){
+                    children = new ArrayList<>();
+                }
+                children.add(productType);
+                parent.setChildren(children);
             }
         }
         return list;

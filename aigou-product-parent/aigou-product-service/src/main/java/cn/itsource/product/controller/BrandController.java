@@ -35,7 +35,7 @@ public class BrandController {
                 brand.setFirstLetter(firstLetter.toUpperCase());
                 brandService.save(brand);
             }
-            return AjaxResult.getAjax();
+            return AjaxResult.getAjax().setSuccess(true).setMessage("successful");
         } catch (Exception e) {
             e.printStackTrace();
             return AjaxResult.getAjax().setMessage("保存对象失败！"+e.getMessage());
@@ -51,7 +51,7 @@ public class BrandController {
     public AjaxResult delete(@PathVariable("id") Integer id){
         try {
             brandService.removeById(id);
-            return AjaxResult.getAjax();
+            return AjaxResult.getAjax().setSuccess(true).setMessage("successful");
         } catch (Exception e) {
         e.printStackTrace();
             return AjaxResult.getAjax().setMessage("删除对象失败！"+e.getMessage());
