@@ -6,12 +6,14 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
  * 品牌信息 Mapper 接口
  * </p>
  */
+@Component
 public interface BrandMapper extends BaseMapper<Brand> {
 
     /**

@@ -3,14 +3,14 @@ package cn.itsource.product.controller;
 import cn.itsource.basic.util.AjaxResult;
 import cn.itsource.basic.util.PageList;
 import cn.itsource.product.domain.Product;
+import cn.itsource.product.domain.Specification;
 import cn.itsource.product.query.ProductQuery;
 import cn.itsource.product.service.IProductService;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/product")
@@ -82,7 +82,44 @@ public class ProductController {
     @RequestMapping(value = "/json",method = RequestMethod.POST)
     public PageList<Product> json(@RequestBody ProductQuery query)
     {
-        IPage<Product> page = productService.page(new Page<Product>(query.getPageNum(),query.getPageSize()));
-        return new PageList<>(page.getTotal(),page.getRecords());
+        return productService.queryPage(query);
+    }
+
+    /**
+     * 查询商品的显示属性
+     * @param productId
+     * @return
+     */
+    @GetMapping("/getViewProperties")
+    public List<Specification> getViewProperties(@RequestParam("productId")Long productId){
+        return productService.getViewProperties(productId);
+    }
+
+    /**
+     * 查询商品的SKU属性
+     * @param productId
+     * @return
+     */
+    @GetMapping("/getSkuProperties")
+    public List<Specification> getSkuProperties(@RequestParam("productId")Long productId){
+        return productService.getSkuProperties(productId);
+    }
+
+    /**
+     * 修改商品的显示属性
+     * @param para
+     * @return
+     */
+    @PostMapping("/updateViewProperties")
+    public AjaxResult updateViewProperties(@RequestBody Map<String,Object> para){
+        int productId = (Integer)para.get("productId");
+        String viewProperties = (String) para.get("viewProperties");
+        try {
+            productService.updateViewProperties(productId,viewProperties);
+            return AjaxResult.getAjax().setSuccess(true).setMessage("修改成功!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.getAjax().setSuccess(false).setMessage("操作失败!"+e.getMessage());
+        }
     }
 }

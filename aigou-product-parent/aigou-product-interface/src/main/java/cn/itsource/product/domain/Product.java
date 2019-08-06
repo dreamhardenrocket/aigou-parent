@@ -1,11 +1,10 @@
 package cn.itsource.product.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 
 /**
@@ -14,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author solargen
- * @since 2019-07-30
+ * @since 2019-08-04
  */
 @TableName("t_product")
 public class Product extends Model<Product> {
@@ -106,12 +105,6 @@ public class Product extends Model<Product> {
     @TableField("commentScore")
     private Integer commentScore;
 
-    /**
-     * 显示属性摘要
-     */
-    @TableField("viewProperties")
-    private String viewProperties;
-
     @TableField("goodCommentCount")
     private Integer goodCommentCount;
 
@@ -120,6 +113,18 @@ public class Product extends Model<Product> {
 
     @TableField("badCommentCount")
     private Integer badCommentCount;
+
+    @TableField("medias")
+    private String medias;
+
+    @TableField(exist = false)
+    private ProductType productType;
+
+    @TableField(exist = false)
+    private Brand brand;
+
+    @TableField(exist =  false)
+    private ProductExt productExt;
 
 
     public Long getId() {
@@ -258,14 +263,6 @@ public class Product extends Model<Product> {
         this.commentScore = commentScore;
     }
 
-    public String getViewProperties() {
-        return viewProperties;
-    }
-
-    public void setViewProperties(String viewProperties) {
-        this.viewProperties = viewProperties;
-    }
-
     public Integer getGoodCommentCount() {
         return goodCommentCount;
     }
@@ -315,10 +312,41 @@ public class Product extends Model<Product> {
         ", viewCount=" + viewCount +
         ", commentCount=" + commentCount +
         ", commentScore=" + commentScore +
-        ", viewProperties=" + viewProperties +
         ", goodCommentCount=" + goodCommentCount +
         ", commonCommentCount=" + commonCommentCount +
         ", badCommentCount=" + badCommentCount +
         "}";
+    }
+
+    public ProductType getProductType() {
+        return productType;
+    }
+
+    public void setProductType(ProductType productType) {
+        this.productType = productType;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+    public ProductExt getProductExt() {
+        return productExt;
+    }
+
+    public void setProductExt(ProductExt productExt) {
+        this.productExt = productExt;
+    }
+
+    public String getMedias() {
+        return medias;
+    }
+
+    public void setMedias(String medias) {
+        this.medias = medias;
     }
 }
