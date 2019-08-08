@@ -99,7 +99,7 @@ public class ProductTypeServiceImpl extends ServiceImpl<ProductTypeMapper, Produ
                 ProductType parent = map.get(productType.getPid());
                 List<ProductType> children = parent.getChildren();
                 if(children==null){
-                    children = new ArrayList<>();
+                    children = new ArrayList<>() ;
                 }
                 children.add(productType);
                 parent.setChildren(children);
